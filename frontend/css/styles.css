@@ -16,20 +16,14 @@
     line-height: 1.5rem;
 }
 
-#header img {
-    width: 500px;
-    height: 100px;
-}
-
 #drawing-area {
-    /* position: relative; */
     background-color: #F8F8F8;
     border: 3px dashed black;
     border-radius: 20px;
-    right: 5%;
-    left: 5%;
-    height: 450px;
     width: 95%;
+    max-width: 1000px;
+    height: 60vhpx;
+    max-height: 500px;
     cursor: crosshair;
 }
 
@@ -71,11 +65,16 @@
     border-radius: 25px;
     
     color: white;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
     margin-top: 20px;
+
+    padding: 0 40px;
+    width: fit-content;
+    max-width: 90vh;
+    white-space: nowrap;
 }
 
 #prediction-text {
@@ -85,4 +84,32 @@
 
 body {
     background-color: #f4f1de;
+}
+
+@media screen and (max-width: 600px) {
+    #header-title {
+        font-size: 2rem;
+    }
+
+    #prediction-text {
+        font-size: 1rem;
+    }
+
+    #drawing-area {
+        width: 90%;
+        height: 50vh;
+    }
+
+    #drawing-tools-container {
+        width: 80px;
+    }
+
+    .btn-drawing-tools img {
+        width: 24px;
+        height: 24px;
+    }
+
+    #prediction-box {
+        width: 200px;
+    }
 }
