@@ -4,6 +4,13 @@ import { sendCanvasForPrediction } from './predictionService.js';
 const canvas = document.getElementById('drawing-area');
 const ctx = canvas.getContext('2d');
 
+function isCanvasBlank(canvas) {
+    const blank = document.createElement('canvas');
+    blank.width = canvas.width;
+    blank.height = canvas.height;
+    return canvas.toDataURL() === blank.toDataURL();
+}
+
 setupToolButtons((tool) => {
     if (tool === "eraser") {
         canvas.style.transition = "opacity 0.2s ease";
@@ -54,7 +61,9 @@ canvas.addEventListener('mouseup', () => {
     ctx.closePath();
 
     drawTimeout = setTimeout(() => {
-        sendCanvasForPrediction(canvas); 
+        if (!isCanvasBlank(canvas)) {
+            sendCanvasForPrediction(canvas); 
+        }
     }, delay); 
 });
 
@@ -62,8 +71,11 @@ canvas.addEventListener('mouseout', () => {
     isDrawing = false;
     ctx.closePath();
 
+    
     drawTimeout = setTimeout(() => {
-        sendCanvasForPrediction(canvas);
-    }, delay);
+        if (!isCanvasBlank(canvas)) {
+            sendCanvasForPrediction(canvas);
+        }
+    }, delay); 
 });
 
