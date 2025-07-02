@@ -22,7 +22,7 @@ class Doodle(BaseModel):
 async def lifespan(app: FastAPI):
     # Load trained Keras model (skip compiling to speed up loading)
     app.state.model = tf.keras.models.load_model(
-        "model.7220251_01.keras", compile=False
+        "best_model.keras", compile=False
     )
 
     # load class names
@@ -39,7 +39,9 @@ app = FastAPI(lifespan=lifespan)
 # Enable CORS for frontend requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  #TODO : change this to frontend url
+    allow_origins=[
+        "https://doodle-predict.vercel.app"  
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
