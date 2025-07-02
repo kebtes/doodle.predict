@@ -16,7 +16,13 @@
     line-height: 1.5rem;
 }
 
+#header img {
+    width: 500px;
+    height: 100px;
+}
+
 #drawing-area {
+    /* position: relative; */
     background-color: #F8F8F8;
     border: 3px dashed black;
     border-radius: 20px;
@@ -28,7 +34,7 @@
 }
 
 #drawing-tools-container {
-    background-color: #838383;
+    background-color: #393939;
     width: 100px;
     height: 40px;
     display: flex;
@@ -77,3 +83,6 @@
     font-style: bold;
 }
 
+body {
+    background-color: #f4f1de;
+}
