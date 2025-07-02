@@ -1,5 +1,5 @@
 import { setupToolButtons } from './buttonListeners.js';
-import { sendCanvasForPrediction } from './predictionService.js';
+import { sendCanvasForPrediction, stopPredictingAnimation } from './predictionService.js';
 
 const canvas = document.getElementById('drawing-area');
 const ctx = canvas.getContext('2d');
@@ -19,6 +19,8 @@ setupToolButtons((tool) => {
         setTimeout(() => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             canvas.style.opacity = "1";
+            
+            stopPredictingAnimation("Draw something!");
         }, 150);
     }
 });
