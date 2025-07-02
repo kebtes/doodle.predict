@@ -72,9 +72,4 @@ async def predict(request: Request, doodle: Doodle):
     pred_index = np.argmax(preds)
     label = CLASSES[pred_index]
 
-    # Debug prints 
-    # print("Preds:", preds[0])
-    # print("Argmax:", pred_index)
-    # print("Label:", label)
-
     return {"prediction": label}
