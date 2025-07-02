@@ -1,0 +1,79 @@
+#container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    margin: auto;
+    height: 90vh;
+    width: 100%;
+    padding: 0px;
+}
+
+#header {
+    font-family: "Geist Mono", monospace;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5rem;
+}
+
+#drawing-area {
+    background-color: #F8F8F8;
+    border: 3px dashed black;
+    border-radius: 20px;
+    right: 5%;
+    left: 5%;
+    height: 450px;
+    width: 95%;
+    cursor: crosshair;
+}
+
+#drawing-tools-container {
+    background-color: #838383;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.btn-drawing-tools {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;;
+}
+
+.btn-drawing-tools img {
+    width: 28px;   
+    height: 28px;  
+    object-fit: contain; 
+    padding: 5px 7px 5px 7px;
+}
+
+.btn-drawing-tools:hover img:hover {
+    background-color: #636363;
+    border-radius: 50%;
+}
+
+#prediction-box {
+    background-color: #393939;
+    height: 50px;
+    width: 250px;
+    border-radius: 25px;
+    
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+#prediction-text {
+    font-family: "Geist Mono", monospace;
+    font-style: bold;
+}
+
