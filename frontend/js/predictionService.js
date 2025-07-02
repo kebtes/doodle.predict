@@ -1,3 +1,26 @@
+let dotInterval = null;
+
+function startPredictingAnimation() {
+    const predictionText = document.getElementById('prediction-text');
+    let dotCount = 0;
+
+    predictionText.textContent = "Predicting";
+
+    clearInterval(dotInterval);
+    dotInterval = setInterval(() => { 
+        dotCount = (dotCount + 1) % 4; 
+        predictionText.textContent = "Predicting" + '.'.repeat(dotCount);
+    }, 350) 
+}
+
+export function stopPredictingAnimation(finalText) {
+    clearInterval(dotInterval);
+    dotInterval = null;
+
+    const predictionText = document.getElementById('prediction-text');
+    predictionText.textContent = finalText;
+}
+
 export async function sendCanvasForPrediction(canvas) {
     const data = canvas.toDataURL('image/png');
     
@@ -6,8 +29,9 @@ export async function sendCanvasForPrediction(canvas) {
     };
 
     const predictionText = document.getElementById('prediction-text');
-    predictionText.textContent = "Predicting...";
 
+    startPredictingAnimation();
+    
     try {
         const response = await fetch("http://127.0.0.1:8000/predict", {
             method: "POST",
@@ -22,7 +46,7 @@ export async function sendCanvasForPrediction(canvas) {
         }
 
         const result = await response.json();
-        predictionText.textContent = result.prediction;
+        stopPredictingAnimation(result.prediction);
 
     } catch (error) {
         console.error("Error:", error);
