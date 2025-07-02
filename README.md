@@ -2,7 +2,14 @@
   <img src="banner.png">
 </div>
 
-<b> A simple web-based doodle predictor trained on top of the [Google Quick, Draw! dataset](https://quickdraw.withgoogle.com/data). Draw something in your browser, and the model will try to guess what it is. </b>
+<div align="center">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License" />
+  <img src="https://img.shields.io/badge/python-3.10-blue" alt="Python" />
+  <img src="https://img.shields.io/badge/TensorFlow-2.12.0-orangen" alt="Tensorflow" />
+  <img src="https://img.shields.io/badge/FastAPI-0.95.2-blue" alt="FastAPI" />
+</div>
+
+#### A simple web-based doodle predictor trained on top of the [Google Quick, Draw! dataset](https://quickdraw.withgoogle.com/data). Draw something in your browser, and the model will try to guess what it is. 
 
 ---
 
