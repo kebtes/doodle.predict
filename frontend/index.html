@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
+        
+        <script type="module" src="js/draw.js"></script>
+        
+        <title>doodle.predict</title>
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1>doodle.predict</h1>
+            </div>
+            <!-- Drawing Area -->
+            <canvas id="drawing-area"></canvas>
+
+            <div id="drawing-tools-container">
+                <button class="btn-drawing-tools" data-tool="eraser" title="Eraser">
+                    <img src="assets/eraser.png" alt="Eraser">
+                </button>
+            </div>
+            
+            <div id="prediction-box">
+                <div id="prediction-emoji">
+                    <span id="emoji">🤔</span>
+                </div>
+
+                <div id="prediction-text">
+                    <span id="text">Draw something!</span>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
