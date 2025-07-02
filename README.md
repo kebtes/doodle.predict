@@ -33,5 +33,5 @@ This project uses a small Convolutional Neural Network (CNN) to predict doodles 
 
 - Total parameters: ~1.36 million
 
-### ⚠️ Note
+## ⚠️ Note
 <b>The model isn't super accurate yet since it was trained on a small part of the full dataset (50,000 doodles, accounting for only ~4%). </b> But it still works well for common, simple drawings.
