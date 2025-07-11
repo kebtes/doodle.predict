@@ -10,4 +10,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Ping Render Backend
-              run: curl -s https://doodle-predict.onrender.com || echo "Ping failed"
+              run: curl -s -A "Mozilla/5.0" -L https://doodle-predict.onrender.com/api/healthcheck
